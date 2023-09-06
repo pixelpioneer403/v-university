@@ -1,0 +1,8 @@
+.accountbook{
+    background: var(--secondary);
+    width: 100%;
+    outline: 2px solid var(--slate-border);
+    margin-block: var(--margin-block);
+
+    @include table_layout();
+}

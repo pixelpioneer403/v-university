@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-layout">
+        <nav class="navbar">
+            <p class="font_bold">V University</p>
+            <button class="material-symbols-outlined" id="toggle_btn">menu</button>
+        </nav>
+        <main class="scrollbar" id="style-7">
+            <!-- Page Toolbar Starting -->
+            <div class="page_toolbar">
+                <span>Course Selection</span>
+            </div>
+            <!-- Page Toolbar Ending -->
+
+            <section class="courseselection">
+                <div class="container_card">
+                    <div class="card_body scrollbar" id="style-7">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td colspan="2">Course Selection Spring 2023</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Student ID</td>
+                                    <td>bc21048445</td>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Danial Zafar</td>
+                                </tr>
+                                <tr>
+                                    <td>Study program</td>
+                                    <td>Associate Degree Programs (Associate Degree in Computer Science)</td>
+                                </tr>
+                                <tr>
+                                    <td>CGPA</td>
+                                    <td>2.26</td>
+                                </tr>
+                                <tr>
+                                    <td>Effective CGPA: </td>
+                                    <td>2.41</td>
+                                </tr>
+                                <tr>
+                                    <td>Credits Earned:</td>
+                                    <td>47</td>
+                                </tr>
+                                <tr>
+                                    <td>Credits Exempted:</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Current Semester No:</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"
+                                        style="background: red; text-align: center; font-size: small; font-weight: bold;">
+                                        <p>Course Selection for Spring 2023 semester will be open after the final result
+                                            declaration of Fall 2022 semester; as per date given in the Academic
+                                            Calendar.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="container_card" style="margin-top: 4rem; background: var(--secondary);">
+                    <div class="card_body scrollbar" id="style-7">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Code</td>
+                                    <td>Title</td>
+                                    <td>Type</td>
+                                    <td>Course Type</td>
+                                    <td>Cr.Hrs. </td>
+                                    <td>Group</td>
+                                    <td>Specialization</td>
+                                    <td>Status</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6">Semester No 1</td>
+                                </tr>
+                                <tr>
+                                    <td>CS101</td>
+                                    <td>Introduction to Computing</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS201</td>
+                                    <td>Introduction to Programming</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS201P</td>
+                                    <td>Introduction to Programming (Practical)</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ENG101</td>
+                                    <td>English Comprehension</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ETH202</td>
+                                    <td>Ethics (for Non-Muslims)</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>2</td>
+                                    <td>ETH202ISL202 (1)</td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ISL202</td>
+                                    <td>Islamic Studies</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td>ETH202ISL202 (1)</td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>MTH101</td>
+                                    <td>Calculus And Analytical Geometry</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PAK301</td>
+                                    <td>Pakistan Studies</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>2</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VU001</td>
+                                    <td>Introduction to e-Learning</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="6">Semester No 2</td>
+                                </tr>
+                                <tr>
+                                    <td>CS202</td>
+                                    <td>Fundamentals of Front End Development</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS301</td>
+                                    <td>Data Structures</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS301P</td>
+                                    <td>Data Structures (Practical)</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS304</td>
+                                    <td>Object Oriented Programming</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS304P</td>
+                                    <td>Object Oriented Programming (Practical)</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ENG201</td>
+                                    <td>Business and Technical English Writing</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>MTH202</td>
+                                    <td>Discrete Mathematics</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">Semester No 3</td>
+                                </tr>
+                                <tr>
+                                    <td>CS403</td>
+                                    <td>Database Management Systems</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS403P</td>
+                                    <td>Database Management Systems (Practical)</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS204</td>
+                                    <td>Cyber Law</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td>CS435CS420CS204 (1)</td>
+                                    <td></td>
+                                    <td>--</td>
+                                </tr>
+                                <tr>
+                                    <td>CS420</td>
+                                    <td>Web Development for Portable Devices</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td>CS435CS420CS204 (1)</td>
+                                    <td></td>
+                                    <td>--</td>
+                                </tr>
+                                <tr>
+                                    <td>CS435</td>
+                                    <td>Cloud Computing</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td>CS435CS420CS204 (1)</td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS504</td>
+                                    <td>Software Engineering - I</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS506</td>
+                                    <td>Web Design and Development</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS601</td>
+                                    <td>Data Communication</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">Semester No 4</td>
+                                </tr>
+                                <tr>
+                                    <td>CS206</td>
+                                    <td>Introduction to Network Design & Analysis</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS311</td>
+                                    <td>Introduction to Web Services Development</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS405</td>
+                                    <td>Database Programming using Oracle 11g</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS411</td>
+                                    <td>Visual Programming</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td>CS441CS411 (1)</td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS441</td>
+                                    <td>Big Data Concepts</td>
+                                    <td>Elective</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td>CS441CS411 (1)</td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CS519</td>
+                                    <td>Final Project</td>
+                                    <td>Required</td>
+                                    <td>Project</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>MGT101</td>
+                                    <td>Financial Accounting</td>
+                                    <td>Required</td>
+                                    <td>Regular</td>
+                                    <td>3</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <aside class="scrollbar" id="style-7">
+            <ul>
+                <a href="/">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">dashboard</span>
+                        <span class="sidebar_text">Dashboard</span>
+                    </li>
+                </a>
+                <a href="./gradebook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">grade</span>
+                        <span class="sidebar_text">Grade Book</span>
+                    </li>
+                </a>
+                <a href="accountbook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">currency_exchange</span>
+                        <span class="sidebar_text">Account Book</span>
+                    </li>
+                </a>
+                <a href="progress.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">rocket_launch</span>
+                        <span class="sidebar_text">Progress</span>
+                    </li>
+                </a>
+                <a href="notes.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">note</span>
+                        <span class="sidebar_text">Notes</span>
+                    </li>
+                </a>
+                <a href="studyscheme">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">psychology</span>
+                        <span class="sidebar_text">My Study Scheme</span>
+                    </li>
+                </a>
+                <a href="studiedcourses.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">new_releases</span>
+                        <span class="sidebar_text">My Studied Courses</span>
+                    </li>
+                </a>
+                <a href="studentservices.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">webhook</span>
+                        <span class="sidebar_text">Student Services</span>
+                    </li>
+                </a>
+                <a href="courseselection.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">select_check_box</span>
+                        <span class="sidebar_text">Course Selection</span>
+                    </li>
+                </a>
+                <a href="covid.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">medical_services</span>
+                        <span class="sidebar_text">Covid 19 Vaccination</span>
+                    </li>
+                </a>
+            </ul>
+        </aside>
+
+        <footer>Footer</footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#toggle_btn').click(function () {
+                $('aside').toggleClass('show-sidebar');
+            })
+        })
+    </script>
+</body>
+
+</html>

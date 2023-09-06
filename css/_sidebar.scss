@@ -1,0 +1,43 @@
+.show-sidebar {
+    transform: translateX(0) !important;
+}
+
+aside {
+    grid-area: aside;
+    overflow-y: scroll;
+    background: var(--background);
+
+    transform: translateX(-100%);
+    transition: 0.5s all ease-in-out;
+    position: absolute;
+    left: auto;
+    width: 280px;
+    height: calc(100vh - var(--nav-footer-height));
+    top: 0;
+
+    .sidebar_item{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        color: var(--text-color);
+        background-color: var(--background);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        border-bottom: 1px solid var(--slate-border);
+
+        .sidebar_icon{
+            flex: 0.2;
+            padding: 1rem;
+        }
+
+        .sidebar_text{
+            flex: 0.8;
+            padding: 1rem auto;
+        }
+
+        @include hover_one(var(--text-color) , var(--secondary))
+    }
+}
+

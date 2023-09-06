@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-layout">
+        <nav class="navbar">
+            <p class="font_bold">V University</p>
+            <button class="material-symbols-outlined" id="toggle_btn">menu</button>
+        </nav>
+        <main class="scrollbar" id="style-7">
+            <!-- Page Toolbar Starting -->
+            <div class="page_toolbar">
+                <span>Notes</span>
+            </div>
+            <!-- Page Toolbar Ending -->
+
+            <section class="notes_section">
+                <form class="notes_form" action="#" method="POST">
+                    <div>
+                        <label for="note_title">Enter Title</label>
+                        <textarea name="note_title" placeholder="Enter Title" class="note_title" id="note_title" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="note_description">Enter Description</label>
+                        <textarea name="note_description" placeholder="Enter Description" class="note_description" id="note_description" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div>
+                        <button class="note_button">Add Note</button>
+                    </div>
+                </form>
+
+                <div class="notes_body">
+                    <div class="note_content">
+                        <span class="icon_note"></span>
+                        <p class="content_title">Tips for a Healthy Lifestyle</p>
+                        <p class="content_description">Maintaining a healthy lifestyle involves regular exercise, a balanced diet, and adequate sleep. It's essential for overall well-being.</p>
+
+                        <div class="note_date">
+                            <span>02-09-2023</span>
+                        </div>
+                    </div>
+                    <div class="note_content">
+                        <span class="icon_note"></span>
+                        <p class="content_title">Effective Time Management</p>
+                        <p class="content_description">Learn to prioritize tasks, set goals, and avoid procrastination. Good time management can boost productivity and reduce stress.</p>
+
+                        <div class="note_date">
+                            <span>02-09-2023</span>
+                        </div>
+                    </div>
+                    <div class="note_content">
+                        <span class="icon_note"></span>
+                        <p class="content_title">Mastering Problem Solving</p>
+                        <p class="content_description">Develop problem-solving skills by breaking down complex issues into smaller parts and finding practical solutions.</p>
+
+                        <div class="note_date">
+                            <span>02-09-2023</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <aside class="scrollbar" id="style-7">
+            <ul>
+                <a href="/">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">dashboard</span>
+                        <span class="sidebar_text">Dashboard</span>
+                    </li>
+                </a>
+                <a href="./gradebook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">grade</span>
+                        <span class="sidebar_text">Grade Book</span>
+                    </li>
+                </a>
+                <a href="accountbook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">currency_exchange</span>
+                        <span class="sidebar_text">Account Book</span>
+                    </li>
+                </a>
+                <a href="progress.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">rocket_launch</span>
+                        <span class="sidebar_text">Progress</span>
+                    </li>
+                </a>
+                <a href="notes.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">note</span>
+                        <span class="sidebar_text">Notes</span>
+                    </li>
+                </a>
+                <a href="studyscheme.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">psychology</span>
+                        <span class="sidebar_text">My Study Scheme</span>
+                    </li>
+                </a>
+                <a href="studiedcourses.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">new_releases</span>
+                        <span class="sidebar_text">My Studied Courses</span>
+                    </li>
+                </a>
+                <a href="studentservices.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">webhook</span>
+                        <span class="sidebar_text">Student Services</span>
+                    </li>
+                </a>
+                <a href="courseselection.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">select_check_box</span>
+                        <span class="sidebar_text">Course Selection</span>
+                    </li>
+                </a>
+                <a href="covid.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">medical_services</span>
+                        <span class="sidebar_text">Covid 19 Vaccination</span>
+                    </li>
+                </a>
+            </ul>
+        </aside>
+
+        <footer>Footer</footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#toggle_btn').click(function () {
+                $('aside').toggleClass('show-sidebar');
+            })
+        })
+    </script>
+</body>
+</html>

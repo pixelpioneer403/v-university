@@ -1,0 +1,36 @@
+.form-control{
+    background: white;    
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    padding: .5rem 1rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.nadra_certificate{
+    color: #3ce409;
+    font-weight: bold;
+}
+
+.covid{
+    width: 100%;
+    outline: 2px solid var(--slate-border);
+    margin-block: var(--margin-block);
+    @include table_layout();
+
+    .covid_form{
+        padding: 1rem;
+
+        .covid_form_table{
+            table-layout: fixed;
+
+            .button_column{
+                text-align: right;
+                button{
+                    @include button(var(--button-color), var(--button-color-hover) , 1.5rem , 0);
+                }
+            }
+        }
+    }
+}

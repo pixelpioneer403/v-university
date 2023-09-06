@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main-layout">
+        <nav class="navbar">
+            <p class="font_bold">V University</p>
+            <button class="material-symbols-outlined" id="toggle_btn">menu</button>
+        </nav>
+        <main class="scrollbar" id="style-7">
+            <!-- Page Toolbar Starting -->
+            <div class="page_toolbar">
+                <span>COVID-19 Vaccination</span>
+            </div>
+            <!-- Page Toolbar Ending -->
+
+            <section class="covid">
+                <div class="container_card">
+                    <div class="card_body scrollbar" id="style-7">
+                        <form action="#" class="covid_form" method="post">
+                            <table class="covid_form_table">
+                                <tr>
+                                    <td>Are you vaccinated?</td>
+                                    <td>
+                                        <span>
+                                            <input type="radio" id="yes" name="is_vaccinated">
+                                            <label for="yes">Yes</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="no" name="is_vaccinated">
+                                            <label for="no">No</label>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>First Dose</td>
+                                    <td><input class="form-control" type="date"></td>
+                                </tr>
+                                <tr>
+                                    <td>Second Dose</td>
+                                    <td><input class="form-control" type="date"></td>
+                                </tr>
+                                <tr>
+                                    <td>Vaccine Name</td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option>Select Vaccine Name</option>
+                                            <option>Moderna</option>
+                                            <option>CanSino/PakVac</option>
+                                            <option>Pfizer</option>
+                                            <option>Sinopharm</option>
+                                            <option>Sinovac (CoronaVac)</option>
+                                            <option>Sputnik V</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vaccination Certificate</td>
+                                    <td><input class="form-control" type="file"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Certificate Number</td>
+                                    <td><input type="text" placeholder="Certificate Number" class="form-control"></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="nadra_certificate">How to get COVID Vaccination NADRA Certificate?</a></td>
+                                    <td class="button_column"><button>Submit Request</button></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <aside class="scrollbar" id="style-7">
+            <ul>
+                <a href="/">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">dashboard</span>
+                        <span class="sidebar_text">Dashboard</span>
+                    </li>
+                </a>
+                <a href="./gradebook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">grade</span>
+                        <span class="sidebar_text">Grade Book</span>
+                    </li>
+                </a>
+                <a href="./accountbook.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">currency_exchange</span>
+                        <span class="sidebar_text">Account Book</span>
+                    </li>
+                </a>
+                <a href="progress.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">rocket_launch</span>
+                        <span class="sidebar_text">Progress</span>
+                    </li>
+                </a>
+                <a href="notes.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">note</span>
+                        <span class="sidebar_text">Notes</span>
+                    </li>
+                </a>
+                <a href="studyscheme">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">psychology</span>
+                        <span class="sidebar_text">My Study Scheme</span>
+                    </li>
+                </a>
+                <a href="studiedcourses.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">new_releases</span>
+                        <span class="sidebar_text">My Studied Courses</span>
+                    </li>
+                </a>
+                <a href="studentservices.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">webhook</span>
+                        <span class="sidebar_text">Student Services</span>
+                    </li>
+                </a>
+                <a href="courseselection.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">select_check_box</span>
+                        <span class="sidebar_text">Course Selection</span>
+                    </li>
+                </a>
+                <a href="covid.html">
+                    <li class="sidebar_item">
+                        <span class="sidebar_icon material-symbols-outlined">medical_services</span>
+                        <span class="sidebar_text">Covid 19 Vaccination</span>
+                    </li>
+                </a>
+            </ul>
+        </aside>
+
+        <footer>Footer</footer>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#toggle_btn').click(function () {
+                $('aside').toggleClass('show-sidebar');
+            })
+        })
+    </script>
+</body>
+</html>

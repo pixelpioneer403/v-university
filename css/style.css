@@ -1,0 +1,652 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+
+:root {
+  --section-padding: 1rem;
+  --margin-block: 1rem;
+  --font-size: 1rem;
+  --nav-footer-height: 65px; }
+
+.font_bold {
+  font-weight: bold;
+  letter-spacing: 1px; }
+
+.text_right {
+  text-align: right; }
+
+#style-7::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+  border-radius: 10px; }
+
+#style-7::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5; }
+
+#style-7::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, #7a99d9), color-stop(0.72, #497dbd), color-stop(0.86, #8796c5)); }
+
+/* Base styling for the toggle switch */
+.toggle-switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 30px; }
+
+/* Hidden checkbox input */
+.toggle-switch input[type="checkbox"] {
+  display: none; }
+
+/* Slider (the visible part of the switch) */
+.toggle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  /* Default background color */
+  transition: 0.4s;
+  border-radius: 30px; }
+
+/* Warning color for the slider when switched on */
+.toggle-switch input[type="checkbox"]:checked + .slider {
+  background-color: #ff9900;
+  /* Warning color */ }
+
+/* Styling for the slider's circle (knob) */
+.toggle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); }
+
+/* Move the circle to the right when switched on */
+.toggle-switch input[type="checkbox"]:checked + .slider:before {
+  transform: translateX(26px); }
+
+/* Optional: Style for the "off" label */
+.toggle-switch .off-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5px;
+  color: #333; }
+
+/* Optional: Style for the "on" label */
+.toggle-switch .on-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  color: #7b7b7b;
+  /* Warning color */ }
+
+.mt-1 {
+  padding-top: 1rem; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617;
+    --secondary: #1e293b;
+    --slate-border: rgb(51, 65, 85);
+    --text-color: #ffffff;
+    --button-color: rgb(14 165 233);
+    --button-color-hover: rgb(56 189 248); }
+
+  body {
+    background: var(--background);
+    color: var(--text-color); } }
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #e9ecef;
+    --secondary: #ced4da;
+    --slate-border: rgb(51, 65, 85);
+    --text-color: #0c0c0c;
+    --button-color: #cdcdcd;
+    --button-color-hover: #b7b7b7; }
+
+  body {
+    background: var(--background);
+    color: var(--text-color); } }
+@media (min-width: 1024px) {
+  .courses {
+    grid-template-columns: repeat(2, 1fr); }
+    .courses .course_body {
+      flex-direction: row;
+      text-align: start; }
+    .courses .course_footer {
+      padding-inline: 2rem; }
+
+  .notes_section {
+    flex-direction: row !important; }
+    .notes_section .notes_form {
+      flex: 0.3;
+      height: 100%; }
+    .notes_section .notes_body {
+      flex: 0.7;
+      height: 100%;
+      align-self: flex-start; }
+
+  .grading_scheme_col {
+    flex: 1;
+    border: none; } }
+@media screen and (min-width: 1336px) {
+  #toggle_btn {
+    display: none;
+    color: white; } }
+.main-layout {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--nav-footer-height) 1fr var(--nav-footer-height);
+  grid-template-areas: 'nav' 'main' 'footer'; }
+
+.show-sidebar {
+  transform: translateX(0) !important; }
+
+aside {
+  grid-area: aside;
+  overflow-y: scroll;
+  background: var(--background);
+  transform: translateX(-100%);
+  transition: 0.5s all ease-in-out;
+  position: absolute;
+  left: auto;
+  width: 280px;
+  height: calc(100vh - var(--nav-footer-height));
+  top: 0; }
+  aside .sidebar_item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--background);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-bottom: 1px solid var(--slate-border); }
+    aside .sidebar_item .sidebar_icon {
+      flex: 0.2;
+      padding: 1rem; }
+    aside .sidebar_item .sidebar_text {
+      flex: 0.8;
+      padding: 1rem auto; }
+    aside .sidebar_item:hover {
+      color: var(--text-color); }
+      aside .sidebar_item:hover::after {
+        transform: scale(1, 1);
+        transform-origin: top left; }
+    aside .sidebar_item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      background-color: var(--secondary);
+      z-index: -1;
+      transition: 0.3s ease all;
+      transform: scale(0, 1);
+      transform-origin: top right;
+      transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+      transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1); }
+
+footer {
+  width: 100%;
+  grid-area: footer;
+  padding: var(--section-padding);
+  background: var(--secondary);
+  outline: 2px solid var(--slate-border);
+  display: flex;
+  align-items: center;
+  position: relative; }
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: var(--section-padding); }
+
+@media screen and (min-width: 1336px) {
+  .main-layout {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 'nav nav nav nav nav' 'aside main main main main' 'aside footer footer footer footer'; }
+
+  aside {
+    transform: translateX(0);
+    transition: 0.5s all ease-in-out;
+    position: relative;
+    width: 100%; } }
+.navbar {
+  grid-area: nav;
+  padding: var(--section-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: 2px solid var(--slate-border);
+  background: var(--secondary); }
+  .navbar #toggle_btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color); }
+
+/* Page Toolbar */
+.page_toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary);
+  height: 60px;
+  padding-inline: 1rem;
+  letter-spacing: 1px;
+  margin-block: var(--margin-block);
+  outline: 2px solid var(--slate-border); }
+
+.courses_section {
+  margin-block: var(--margin-block);
+  width: 100%; }
+  .courses_section .courses {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
+    gap: 1rem; }
+    .courses_section .courses .course {
+      width: 100%;
+      height: max-content;
+      background: var(--secondary);
+      display: flex;
+      flex-direction: column;
+      outline: 2px solid var(--slate-border); }
+      .courses_section .courses .course .course_head, .courses_section .courses .course .course_footer {
+        width: 100%;
+        flex: 0.3;
+        padding: .5rem; }
+      .courses_section .courses .course .course_head {
+        border-bottom: 3px solid var(--slate-border);
+        padding: 1rem; }
+        .courses_section .courses .course .course_head .course_title {
+          font-size: 1.1rem; }
+        .courses_section .courses .course .course_head .course_category, .courses_section .courses .course .course_head .course_hours {
+          color: #797979; }
+      .courses_section .courses .course .course_body {
+        flex-grow: 1;
+        padding: 1rem;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        align-content: space-between;
+        flex-direction: column;
+        text-align: center; }
+        .courses_section .courses .course .course_body .course_author {
+          flex: 0.25;
+          max-width: 100px;
+          background: var(--slate-border);
+          height: 100%;
+          margin-bottom: var(--margin-block); }
+        .courses_section .courses .course .course_body .course_author_details {
+          flex-grow: 1;
+          padding-inline: 1rem;
+          height: 100%; }
+        .courses_section .courses .course .course_body .author_name {
+          font-size: 1.1rem;
+          font-weight: 500; }
+      .courses_section .courses .course .course_footer {
+        border-top: 3px solid var(--slate-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 1rem; }
+        .courses_section .courses .course .course_footer span {
+          padding: .5rem;
+          border: 2px solid var(--slate-border);
+          border-radius: 50%;
+          margin-block: var(--margin-block); }
+          .courses_section .courses .course .course_footer span:hover {
+            background: var(--slate-border);
+            transition: .3s all ease-in-out;
+            cursor: pointer; }
+
+.todocalender {
+  background: var(--secondary);
+  width: 100%;
+  outline: 2px solid var(--slate-border);
+  margin-block: var(--margin-block); }
+  .todocalender .card_head {
+    width: 100%;
+    padding: var(--section-padding);
+    border-bottom: 2px solid var(--slate-border); }
+  .todocalender .card_body {
+    padding: 2rem;
+    width: 100%; }
+    .todocalender .card_body table {
+      width: 100%;
+      border-spacing: none;
+      table-layout: fixed; }
+
+.accountbook {
+  background: var(--secondary);
+  width: 100%;
+  outline: 2px solid var(--slate-border);
+  margin-block: var(--margin-block); }
+  .accountbook .container_card {
+    width: 100%;
+    background: var(--secondary); }
+    .accountbook .container_card .card_body {
+      width: 100%;
+      overflow-x: auto; }
+      .accountbook .container_card .card_body table {
+        width: 100%;
+        border-spacing: 0; }
+        .accountbook .container_card .card_body table thead td {
+          background: var(--slate-border);
+          color: gainsboro; }
+        .accountbook .container_card .card_body table td {
+          border: 1px solid black;
+          padding: 0.5rem;
+          white-space: nowrap; }
+
+.studentservices {
+  width: 100%;
+  outline: 2px solid var(--slate-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: var(--margin-block); }
+  .studentservices .services_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; }
+    .studentservices .services_container > div:first-child {
+      padding: var(--section-padding);
+      background: var(--secondary);
+      width: inherit; }
+    .studentservices .services_container > div:last-child {
+      width: inherit;
+      display: grid;
+      justify-content: space-between;
+      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+      .studentservices .services_container > div:last-child a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: var(--section-padding);
+        gap: 1rem;
+        color: var(--text-color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 100%; }
+        .studentservices .services_container > div:last-child a > span:first-child {
+          padding: .5rem;
+          border: 2px solid var(--slate-border);
+          border-radius: 50%; }
+          .studentservices .services_container > div:last-child a > span:first-child:hover {
+            background: var(--slate-border);
+            transition: .3s all ease-in-out;
+            cursor: pointer; }
+
+.notes_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: var(--margin-block);
+  gap: 1.5rem; }
+  .notes_section .notes_form {
+    width: 100%;
+    padding: 1rem;
+    outline: 2px solid var(--slate-border);
+    background: var(--secondary);
+    height: 100%; }
+    .notes_section .notes_form > div {
+      padding-top: 1rem; }
+      .notes_section .notes_form > div label {
+        color: var(--text-color);
+        font-size: 1rem; }
+      .notes_section .notes_form > div .note_button {
+        height: 3rem;
+        background-color: var(--button-color);
+        width: auto;
+        padding-inline: 1.5rem;
+        padding-block: 0;
+        border: 0;
+        outline: 0;
+        transition: 0.5s all ease-in-out;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--text-color); }
+        .notes_section .notes_form > div .note_button:hover {
+          background-color: var(--button-color-hover);
+          transition: 0.5s all ease-in-out; }
+    .notes_section .notes_form .note_title, .notes_section .notes_form .note_description {
+      background: var(--secondary);
+      width: 100%;
+      box-sizing: border-box;
+      padding: 1rem;
+      margin-block: 1rem;
+      color: var(--text-color);
+      font-size: 1rem; }
+      .notes_section .notes_form .note_title:focus, .notes_section .notes_form .note_description:focus {
+        outline: none; }
+  .notes_section .notes_body {
+    border: 2px 2px 0 2px solid var(--slate-border);
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem; }
+    .notes_section .notes_body .note_content {
+      outline: 2px solid var(--slate-border); }
+      .notes_section .notes_body .note_content .content_title {
+        cursor: pointer;
+        color: var(--text-color);
+        background-color: var(--secondary);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1; }
+        .notes_section .notes_body .note_content .content_title:hover {
+          color: var(--text-color); }
+          .notes_section .notes_body .note_content .content_title:hover::after {
+            transform: scale(1, 1);
+            transform-origin: top left; }
+        .notes_section .notes_body .note_content .content_title::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          height: 100%;
+          width: 100%;
+          display: grid;
+          place-items: center;
+          background-color: var(--button-color);
+          z-index: -1;
+          transition: 0.3s ease all;
+          transform: scale(0, 1);
+          transform-origin: top right;
+          transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+          transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1); }
+      .notes_section .notes_body .note_content .content_title, .notes_section .notes_body .note_content .content_description, .notes_section .notes_body .note_content .note_date {
+        padding: 1rem;
+        line-height: 200%; }
+      .notes_section .notes_body .note_content .note_date {
+        margin-bottom: 0.6rem; }
+        .notes_section .notes_body .note_content .note_date span {
+          background: var(--secondary);
+          padding: 0.6rem;
+          border-radius: 8px;
+          border: 2px solid var(--slate-border); }
+      .notes_section .notes_body .note_content .content_description {
+        background: var(--background); }
+
+.color_size {
+  font-size: small;
+  color: #767676; }
+
+.gradebook_section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  outline: 2px solid var(--slate-border); }
+  .gradebook_section .gradebook_head {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap; }
+    .gradebook_section .gradebook_head .gradebook_head_item {
+      flex: content;
+      display: flex;
+      align-items: center;
+      width: max-content;
+      padding-inline: 1rem;
+      border-right: 1px solid var(--slate-border);
+      border-bottom: 1px solid var(--slate-border); }
+      .gradebook_section .gradebook_head .gradebook_head_item .gradebook_head_icon, .gradebook_section .gradebook_head .gradebook_head_item .gradebook_head_title {
+        padding-block: .65rem;
+        font-size: 1.1rem; }
+      .gradebook_section .gradebook_head .gradebook_head_item .gradebook_head_icon {
+        padding-right: .5rem; }
+  .gradebook_section .grading_scheme_container {
+    width: 100%; }
+    .gradebook_section .grading_scheme_container .grading_scheme_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      width: 100%; }
+      .gradebook_section .grading_scheme_container .grading_scheme_row .grading_scheme_col {
+        width: 100%;
+        border-right: 1px solid var(--slate-border);
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 1rem;
+        gap: 1.5rem;
+        flex-direction: column; }
+        .gradebook_section .grading_scheme_container .grading_scheme_row .grading_scheme_col > div {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem; }
+          .gradebook_section .grading_scheme_container .grading_scheme_row .grading_scheme_col > div span {
+            padding-bottom: 4px; }
+  .gradebook_section .container_card {
+    width: 100%;
+    background: var(--secondary); }
+    .gradebook_section .container_card .card_body {
+      width: 100%;
+      overflow-x: auto; }
+      .gradebook_section .container_card .card_body table {
+        width: 100%;
+        border-spacing: 0; }
+        .gradebook_section .container_card .card_body table thead td {
+          background: var(--slate-border);
+          color: gainsboro; }
+        .gradebook_section .container_card .card_body table td {
+          border: 1px solid black;
+          padding: 0.5rem;
+          white-space: nowrap; }
+
+.courseselection {
+  width: 100%;
+  outline: 2px solid var(--slate-border);
+  margin-block: var(--margin-block); }
+  .courseselection .container_card {
+    width: 100%;
+    background: var(--secondary); }
+    .courseselection .container_card .card_body {
+      width: 100%;
+      overflow-x: auto; }
+      .courseselection .container_card .card_body table {
+        width: 100%;
+        border-spacing: 0; }
+        .courseselection .container_card .card_body table thead td {
+          background: var(--slate-border);
+          color: gainsboro; }
+        .courseselection .container_card .card_body table td {
+          border: 1px solid black;
+          padding: 0.5rem;
+          white-space: nowrap; }
+
+.form-control {
+  background: white;
+  outline: none;
+  font-size: 1rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  color: var(--text-color);
+  font-weight: bold; }
+
+.nadra_certificate {
+  color: #3ce409;
+  font-weight: bold; }
+
+.covid {
+  width: 100%;
+  outline: 2px solid var(--slate-border);
+  margin-block: var(--margin-block); }
+  .covid .container_card {
+    width: 100%;
+    background: var(--secondary); }
+    .covid .container_card .card_body {
+      width: 100%;
+      overflow-x: auto; }
+      .covid .container_card .card_body table {
+        width: 100%;
+        border-spacing: 0; }
+        .covid .container_card .card_body table thead td {
+          background: var(--slate-border);
+          color: gainsboro; }
+        .covid .container_card .card_body table td {
+          border: 1px solid black;
+          padding: 0.5rem;
+          white-space: nowrap; }
+  .covid .covid_form {
+    padding: 1rem; }
+    .covid .covid_form .covid_form_table {
+      table-layout: fixed; }
+      .covid .covid_form .covid_form_table .button_column {
+        text-align: right; }
+        .covid .covid_form .covid_form_table .button_column button {
+          height: 3rem;
+          background-color: var(--button-color);
+          width: auto;
+          padding-inline: 1.5rem;
+          padding-block: 0;
+          border: 0;
+          outline: 0;
+          transition: 0.5s all ease-in-out; }
+          .covid .covid_form .covid_form_table .button_column button:hover {
+            background-color: var(--button-color-hover);
+            transition: 0.5s all ease-in-out; }
+
+/*# sourceMappingURL=style.css.map */

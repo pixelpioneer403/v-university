@@ -1,0 +1,216 @@
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+:root{
+    --section-padding : 1rem;
+    --margin-block : 1rem;
+    --font-size : 1rem;
+    --nav-footer-height : 65px;
+}
+
+// Global Classes
+.font_bold{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.text_right{
+    text-align: right;
+}
+
+// Scrollbar
+#style-7::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+#style-7::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+#style-7::-webkit-scrollbar-thumb {
+    background-image: -webkit-gradient(linear,
+            left bottom,
+            left top,
+            color-stop(0.44, rgb(122, 153, 217)),
+            color-stop(0.72, rgb(73, 125, 189)),
+            color-stop(0.86, rgb(135, 150, 197)));
+}
+
+/* Base styling for the toggle switch */
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 30px;
+  }
+  
+  /* Hidden checkbox input */
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Slider (the visible part of the switch) */
+  .toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default background color */
+    transition: 0.4s;
+    border-radius: 30px;
+  }
+  
+  /* Warning color for the slider when switched on */
+  .toggle-switch input[type="checkbox"]:checked + .slider {
+    background-color: #ff9900; /* Warning color */
+  }
+  
+  /* Styling for the slider's circle (knob) */
+  .toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Move the circle to the right when switched on */
+  .toggle-switch input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  /* Optional: Style for the "off" label */
+  .toggle-switch .off-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    color: #333;
+  }
+  
+  /* Optional: Style for the "on" label */
+  .toggle-switch .on-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    color: #7b7b7b; /* Warning color */
+  }
+
+  .mt-1{
+    padding-top: 1rem;
+  }
+
+// Dark mode
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #020617;
+        --secondary: #1e293b;
+        --slate-border: rgb(51, 65, 85);
+        --text-color : #ffffff;
+        --button-color : rgb(14 165 233);
+        --button-color-hover : rgb(56 189 248);
+    }
+
+    body{
+        background: var(--background);
+        color: var(--text-color);
+    }
+}
+
+// Light mode
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: #e9ecef;
+        --secondary: #ced4da;
+        --slate-border: rgb(51, 65, 85);
+        --text-color : #0c0c0c;
+        --button-color : #cdcdcd;
+        --button-color-hover : #b7b7b7;
+    }
+
+    body{
+        background: var(--background);
+        color: var(--text-color);
+    }
+}
+
+
+
+// Laptop
+@media (min-width: 1024px) {
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+
+        .course_body{
+            flex-direction: row;
+            text-align: start;
+        }
+
+        .course_footer{
+            padding-inline: 2rem;
+        }
+    }
+
+    .notes_section{
+        flex-direction: row !important;
+        
+
+        .notes_form{
+            flex: 0.3;
+            height: 100%;
+        }
+
+        .notes_body{
+            flex: 0.7;
+            height: 100%;
+            align-self: flex-start;
+        }
+    }
+
+   
+
+    .grading_scheme_col{
+        flex: 1;
+        border: none;
+    }
+
+    
+}
+
+// Desktop
+@media screen and (min-width: 1336px) {
+
+    #toggle_btn{
+        display: none;
+        color: white;
+    }
+
+    
+
+}

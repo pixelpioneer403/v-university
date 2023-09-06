@@ -1,0 +1,96 @@
+.notes_section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block : var(--margin-block);
+    gap: 1.5rem;
+
+    .notes_form{
+        width: 100%;
+        padding: 1rem;
+        outline: 2px solid var(--slate-border);
+        background: var(--secondary);
+        height: 100%;
+
+        > div{
+            padding-top: 1rem;
+
+            label{
+                color: var(--text-color);
+                font-size: 1rem;
+            }
+
+            .note_button{
+                @include button(var(--button-color), var(--button-color-hover) , 1.5rem , 0);
+                font-size: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                color: var(--text-color);
+            }
+        }
+
+        .note_title , .note_description {
+            background: var(--secondary);
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1rem;
+            margin-block: 1rem;
+            color: var(--text-color);
+            font-size: 1rem;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    .notes_body{
+        border: 2px 2px 0 2px solid var(--slate-border);
+        
+        width: 100%;
+        display: grid;
+        justify-content: center;
+        align-items: start;
+        grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
+        gap: 1rem;
+
+        .note_content{
+            outline: 2px solid var(--slate-border);
+
+            .content_title{
+                cursor: pointer;
+                color: var(--text-color);
+                background-color: var(--secondary);
+                transition: all 0.3s;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+    
+               @include hover_one(var(--text-color) , var(--button-color))
+            }
+
+            .content_title, .content_description, .note_date{
+                padding: 1rem;
+                line-height: 200%;
+                
+            }
+
+            .note_date{
+                margin-bottom: 0.6rem;
+                span {
+                    background: var(--secondary);
+                    padding: 0.6rem;
+                    border-radius: 8px;
+                    border: 2px solid var(--slate-border);
+                }
+            }
+
+            .content_description{
+                background: var(--background);
+            }
+        }
+    }
+
+    
+}

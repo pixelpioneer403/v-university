@@ -1,0 +1,71 @@
+@mixin button ($background, $background_hover, $padding_inline, $padding_block) {
+    height: 3rem;
+    background-color: $background;
+    width: auto;
+    padding-inline : $padding_inline;
+    padding-block : $padding_block;
+    border: 0;
+    outline: 0;
+    transition: 0.5s all ease-in-out;
+
+    &:hover{
+        background-color: $background_hover;
+        transition: 0.5s all ease-in-out;
+    }
+}
+
+@mixin hover_one ($color, $hoverBackgroundColor) {
+    &:hover{
+        color: $color;
+
+        &::after{
+            transform: scale(1, 1);
+            transform-origin: top left;
+        }
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        background-color: $hoverBackgroundColor;
+        z-index: -1;
+        transition: 0.3s ease all;
+        transform: scale(0, 1);
+        transform-origin: top right;
+        transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+        transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    }
+}
+
+@mixin table_layout () {
+    .container_card{
+        width: 100%;
+        background: var(--secondary);
+
+        .card_body{
+            width: 100%;
+            overflow-x: auto;
+            table{
+                width: 100%;
+                border-spacing: 0;
+                thead{
+                    td{
+                        background: var(--slate-border);
+                        color: gainsboro;
+                    }
+                }
+
+                td{
+                    border: 1px solid black;
+                    padding: 0.5rem;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

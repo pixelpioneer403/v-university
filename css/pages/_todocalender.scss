@@ -1,0 +1,23 @@
+.todocalender{
+    background: var(--secondary);
+    width: 100%;
+    outline: 2px solid var(--slate-border);
+    margin-block: var(--margin-block);
+
+    .card_head{
+        width: 100%;
+        padding: var(--section-padding);
+        border-bottom: 2px solid var(--slate-border);
+    }
+
+    .card_body{
+        padding: 2rem;
+        width: 100%;
+
+        table{
+            width: 100%;
+            border-spacing: none;
+            table-layout: fixed;
+        }
+    }
+}

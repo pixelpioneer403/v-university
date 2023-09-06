@@ -1,0 +1,17 @@
+.navbar {
+    grid-area: nav;
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 2px solid var(--slate-border);
+    background: var(--secondary);
+
+    #toggle_btn {
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+}
